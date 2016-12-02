@@ -1,0 +1,15 @@
+session_name: pelican
+windows:
+    - window_name: dev
+      layout: main-vertical
+      options:
+          main-pane-width: 120
+      panes:
+          - vim
+          - shell_command:
+            - workon pelican
+            - cd output
+            - python -m http.server
+          - shell_command:
+            - workon pelican
+            - rm -fr output/theme && pelican -r
